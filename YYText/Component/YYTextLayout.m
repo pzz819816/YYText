@@ -2045,7 +2045,7 @@ fail:
             } else {
                 topRect.rect = CGRectMake(_container.path ? startLine.left : _container.insets.left, startLine.top, topOffset - startLine.left, startLine.height);
             }
-            topRect.writingDirection = UITextWritingDirectionRightToLeft;
+            topRect.writingDirection = NSWritingDirectionRightToLeft;
         } else {
             if (isVertical) {
                 topRect.rect = CGRectMake(startLine.left, topOffset, startLine.width, (_container.path ? startLine.bottom : _container.size.height - _container.insets.bottom) - topOffset);
@@ -2066,7 +2066,7 @@ fail:
             } else {
                 bottomRect.rect = CGRectMake(bottomOffset, endLine.top, (_container.path ? endLine.right : _container.size.width - _container.insets.right) - bottomOffset, endLine.height);
             }
-            bottomRect.writingDirection = UITextWritingDirectionRightToLeft;
+            bottomRect.writingDirection = NSWritingDirectionRightToLeft;
         } else {
             if (isVertical) {
                 CGFloat top = _container.path ? endLine.top : _container.insets.top;
