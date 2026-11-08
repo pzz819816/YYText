@@ -1,6 +1,6 @@
 # YYText iOS 27 适配记录
 
-日期：2026-11-07。基线：本 fork 的 `858d28f`（tag `1.0.9`），分支 `codex/yytext-writing-direction`。本次适配提交发布为测试 tag `1.0.0`，保留已有 `1.0.9` 不变。
+日期：2026-11-07。基线：本 fork 的 `858d28f`（tag `1.0.9`），分支 `codex/yytext-writing-direction`。本次适配提交发布为测试 tag `1.1.0`。此前误建的 `1.0.0` tag 保留不移动，使用项目应指向 `1.1.0`。
 
 ## 本次修改
 
