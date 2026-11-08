@@ -200,6 +200,12 @@ static dispatch_queue_t YYTextAsyncLayerGetReleaseQueue() {
     } else {
         [_sentinel increase];
         if (task.willDisplay) task.willDisplay(self);
+        // Match the asynchronous path's empty-size handling before creating a bitmap.
+        if (self.bounds.size.width < 1 || self.bounds.size.height < 1) {
+            self.contents = nil;
+            if (task.didDisplay) task.didDisplay(self, YES);
+            return;
+        }
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, self.contentsScale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         if (self.opaque && context) {

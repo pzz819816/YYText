@@ -483,7 +483,10 @@ static int _YYTextKeyboardViewFrameObserverKey;
     _hasObservedChange = NO;
     _fromFrame = trans.toFrame;
     _fromVisible = trans.toVisible;
-    _fromOrientation = app.statusBarOrientation;
+    // Only the iOS 7 floating-keyboard workaround consumes this value.
+    if (((int)[self _systemVersion]) == 7) {
+        _fromOrientation = app.statusBarOrientation;
+    }
 }
 
 - (CGRect)convertRect:(CGRect)rect toView:(UIView *)view {
